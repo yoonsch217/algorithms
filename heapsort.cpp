@@ -2,7 +2,6 @@
 #include <cstdlib>
 using namespace std;
  
-//swap function 
 void swap(int* a, int* b){
 	int tmp = *a;
 	*a = *b;
@@ -47,21 +46,19 @@ void printarray(int arr[], int n){
 
 
 int main(){
-	int testarr[] = {4,6,1,8,2,9};
+	int testarr[10];
+	for(int i = 0; i<10; i++) testarr[i] =rand()%100;//make an array filled with randomly created values
+
 	int n = sizeof(testarr)/sizeof(testarr[0]);
-
-	int testarr2[10];
-
-	for(int i = 0; i<10; i++) testarr2[i] =rand()%100;	
-
-	for(int i = 0; i < 10; i++) printf("%d ", testarr2[i]);
-	printf("\n");
-	heapsort(testarr2, 10);
-
-//	printarray(testarr, n);
-	
 	printf("Original array: ");
-	for(int i = 0; i < 10; i++) printf("%d ", testarr2[i]);
+	for(int i = 0; i < 10; i++) printf("%d ", testarr[i]);
+	printf("\n");
+	heapsort(testarr, n);
+
 	
+	printf("Sorted array: ");
+	for(int i = 0; i < 10; i++) printf("%d ", testarr[i]);
+	
+	printf("\n");
 	return 0;
 }
